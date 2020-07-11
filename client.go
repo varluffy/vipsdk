@@ -57,6 +57,7 @@ func (a *Client) SetParam(param Param) *Client {
 	p.Add("timestamp", strconv.FormatInt(time.Now().Unix(), 10))
 	p.Add("version", param.Version())
 	req := greq.NewRequest("post", a.host)
+	req.SetTimeout(30 * time.Second)
 	ps := param.Params()
 	req.SetBodyJSON(ps)
 	b, err := json.Marshal(ps)
@@ -64,7 +65,6 @@ func (a *Client) SetParam(param Param) *Client {
 		a.err = err
 		return a
 	}
-	fmt.Println("body", string(b))
 	p.Add("sign", a.sign(p, string(b)))
 	if param.Token() {
 		p.Add("accessToken", a.accessToken)
@@ -88,8 +88,6 @@ func (a *Client) Exec(out interface{}) error {
 	if resp.StatusCode() != http.StatusOK {
 		return fmt.Errorf("excepted statusCode=200 actual statusCode=%d", resp.StatusCode())
 	}
-	dumpRequest, _ := resp.DumpRequest(true)
-	fmt.Println("dumpRequest", string(dumpRequest))
 	if err := resp.ToJSON(out); err != nil {
 		return err
 	}
