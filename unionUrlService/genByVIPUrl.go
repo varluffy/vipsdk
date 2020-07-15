@@ -24,17 +24,16 @@ func (a GenByVIPUrlParam) Params() interface{} {
 	return p
 }
 
-
 type GenByVIPUrlRequest struct {
-	UrlList []string `json:"urlList,omitempty"` // 商品id列表
-	ChanTag string `json:"chanTag"` // 渠道标识
-	RequestId string `json:"requestId"` // 请求id：UUID
-	StatParam string `json:"statParam"` // 自定义渠道统计参数
+	UrlList   []string `json:"urlList,omitempty"` // 商品id列表
+	ChanTag   string   `json:"chanTag"`           // 渠道标识
+	RequestId string   `json:"requestId"`         // 请求id：UUID
+	StatParam string   `json:"statParam"`         // 自定义渠道统计参数
 }
 
 type GenByVIPUrlResponse struct {
 	ReturnCode string `json:"returnCode"`
-	Result struct {
+	Result     struct {
 		URLInfoList []*UrlInfo `json:"urlInfoList"`
 	} `json:"result"`
 }

@@ -7,10 +7,10 @@ import (
 
 var client = vipsdk.NewClient("", "", vipsdk.ProdOpenAPIURL)
 
-func TestGenPid(t *testing.T)  {
+func TestGenPid(t *testing.T) {
 	var p = GenPidParam{
 		Request: PidGenRequest{
-			RequestId: "123123123",
+			RequestId:   "123123123",
 			PidNameList: []string{"有钱得"},
 		},
 	}

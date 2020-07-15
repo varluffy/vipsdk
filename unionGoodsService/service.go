@@ -2,7 +2,7 @@ package unionGoodsService
 
 import "github.com/varluffy/vipsdk"
 
-type Service struct{
+type Service struct {
 	RequestId string `json:"requestId"` // 请求id：UUID
 }
 
@@ -88,7 +88,7 @@ type PrepayInfo struct {
 	PrepayFirstStartTime int64  `json:"prepayFirstStartTime,omitempty"` // 首款支付开始时间:时间戳,单位毫秒
 	PrepayFirstEndTime   int64  `json:"prepayFirstEndTime,omitempty"`   // 首款支付结束时间:时间戳,单位毫秒
 	PrepayLastStartTime  int64  `json:"prepayLastStartTime,omitempty"`  // 尾款支付开始时间:时间戳,单位毫秒
-	PrepayLastEndTime    int64  `json:"prepayLastEndTime,omitempty"`              // 尾款支付结束时间:时间戳,单位毫秒
+	PrepayLastEndTime    int64  `json:"prepayLastEndTime,omitempty"`    // 尾款支付结束时间:时间戳,单位毫秒
 }
 
 // 商品参加的唯品会活动信息
@@ -99,32 +99,34 @@ type ActivityInfo struct {
 	EndTime           int64  `json:"endTime,omitempty"`           // 结束时间：时间戳，单位毫秒
 	ForeShowBeginTime int64  `json:"foreShowBeginTime,omitempty"` // 预热开始时间：时间戳，单位毫秒
 }
+
 // 红包信息
 type PMSCouponInfo struct {
-	CouponNo   string `json:"couponNo,omitempty"` // 优惠券批次号
+	CouponNo   string `json:"couponNo,omitempty"`   // 优惠券批次号
 	CouponName string `json:"couponName,omitempty"` // 优惠劵名称
-	Buy        string `json:"buy,omitempty"` // 使用门槛
-	Fav        string `json:"fav,omitempty"` // 优惠金额
+	Buy        string `json:"buy,omitempty"`        // 使用门槛
+	Fav        string `json:"fav,omitempty"`        // 优惠金额
 }
 
 type SortFields struct {
 	FieldName string `json:"fieldName,omitempty"`
 	FieldDesc string `json:"fieldDesc,omitempty"`
 }
+
 // 通用参数
 type CommonParams struct {
-	Plat int64 `json:"plat,omitempty"` // 用户平台：1-PC,2-APP,3-小程序,不传默认为APP
-	DeviceType string `json:"deviceType,omitempty"` // 设备号类型：IMEI，IDFA，OAID，有则传入
+	Plat        int64  `json:"plat,omitempty"`        // 用户平台：1-PC,2-APP,3-小程序,不传默认为APP
+	DeviceType  string `json:"deviceType,omitempty"`  // 设备号类型：IMEI，IDFA，OAID，有则传入
 	DeviceValue string `json:"deviceValue,omitempty"` // 设备号MD5加密后的值，有则传入
-	IP string `json:"ip,omitempty"` // 用户ip地址
-	Longitude string `json:"longitude,omitempty"` // 经度 如:29.590961456298828
-	Latitude string `json:"latitude,omitempty"` // 纬度 如:106.51573181152344
+	IP          string `json:"ip,omitempty"`          // 用户ip地址
+	Longitude   string `json:"longitude,omitempty"`   // 经度 如:29.590961456298828
+	Latitude    string `json:"latitude,omitempty"`    // 纬度 如:106.51573181152344
 }
 
 type GoodsInfoResponse struct {
-	GoodsInfoList []*GoodsInfo `json:"goodsInfoList"`
-	Total int64 `json:"total"`
-	SortFields []*SortFields `json:"sortFields"`
-	Page int64 `json:"page"`
-	PageSize int64 `json:"pageSize"`
+	GoodsInfoList []*GoodsInfo  `json:"goodsInfoList"`
+	Total         int64         `json:"total"`
+	SortFields    []*SortFields `json:"sortFields"`
+	Page          int64         `json:"page"`
+	PageSize      int64         `json:"pageSize"`
 }

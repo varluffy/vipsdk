@@ -3,7 +3,7 @@ package unionPidService
 import "testing"
 
 func TestQueryPid(t *testing.T) {
-	var p = QueryPidParam {
+	var p = QueryPidParam{
 		Request: PidQueryRequest{
 			RequestId: "123123123",
 		},

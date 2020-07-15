@@ -2,10 +2,10 @@ package unionOrderService
 
 import "testing"
 
-func TestRefundOrderList(t *testing.T)  {
+func TestRefundOrderList(t *testing.T) {
 	var p = RefundOrderListParam{
 		Request: RefundOrderRequest{
-			Page:1,
+			Page:      1,
 			RequestId: "123123123",
 		},
 	}

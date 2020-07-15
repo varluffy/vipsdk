@@ -25,8 +25,8 @@ func (a GetByGoodsIdsParam) Params() interface{} {
 
 type GetByGoodsIdsRequest struct {
 	GoodsIdList []string `json:"goodsIdList"` // 商品id列表
-	ChanTag string `json:"chanTag"` // 自定义渠道标识,同推广位 非必填
-	RequestId string `json:"requestId"`
+	ChanTag     string   `json:"chanTag"`     // 自定义渠道标识,同推广位 非必填
+	RequestId   string   `json:"requestId"`
 }
 type GetByGoodsIdsResponse struct {
 	ReturnCode string       `json:"returnCode"`

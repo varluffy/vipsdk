@@ -5,9 +5,9 @@ import "testing"
 func TestSimilarRecommend(t *testing.T) {
 	var p = SimilarRecommendParam{
 		Request: SimilarRecommendRequest{
-			Page:1,
+			Page:      1,
 			RequestId: "123123123",
-			GoodsId: "6918733344432093713",
+			GoodsId:   "6918733344432093713",
 		},
 	}
 

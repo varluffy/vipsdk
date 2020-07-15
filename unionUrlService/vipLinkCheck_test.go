@@ -3,10 +3,10 @@ package unionUrlService
 import "testing"
 
 func TestVipLinkCheck(t *testing.T) {
-	var p = VipLinkCheckParam {
+	var p = VipLinkCheckParam{
 		Request: VipLinkCheckReq{
 			Content: "https://t.vip.com/wvDXpjGPrh7",
-			Source: "yqd",
+			Source:  "yqd",
 		},
 	}
 

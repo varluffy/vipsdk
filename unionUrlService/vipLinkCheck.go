@@ -5,11 +5,11 @@ type VipLinkCheckParam struct {
 	Request VipLinkCheckReq
 }
 
-func (a VipLinkCheckParam) MethodName() string  {
+func (a VipLinkCheckParam) MethodName() string {
 	return "vipLinkCheck"
 }
 
-func (a VipLinkCheckParam) Params() interface{}  {
+func (a VipLinkCheckParam) Params() interface{} {
 	p := make(map[string]interface{}, 0)
 	p["vipLinkCheckReq"] = a.Request
 	return p
@@ -17,16 +17,15 @@ func (a VipLinkCheckParam) Params() interface{}  {
 
 // 链接解析请求
 type VipLinkCheckReq struct {
-	Source string`json:"source,omitempty"` // 请求源：调用方自定义，标识请求应用即可，无业务含义
+	Source  string `json:"source,omitempty"`  // 请求源：调用方自定义，标识请求应用即可，无业务含义
 	Content string `json:"content,omitempty"` // 检查的内容(长度不超过10000)
 }
 
-
 type VipLinkCheckResponse struct {
 	ReturnCode string `json:"returnCode"`
-	Result struct {
+	Result     struct {
 		SuccessMap map[string]VipLinkCheckVO `json:"successMap"`
-		FailMap map[string]VipLinkCheckVO `json:"failMap"`
+		FailMap    map[string]VipLinkCheckVO `json:"failMap"`
 	} `json:"result"`
 }
 

@@ -8,9 +8,9 @@ import (
 var client = vipsdk.NewClient("0b78bc17", "CAC03E0A28BA1539802A2D7A312F4345", vipsdk.ProdOpenAPIURL)
 
 func TestGenByGoodsId(t *testing.T) {
-	var p = GenByGoodsIdParam {
+	var p = GenByGoodsIdParam{
 		Request: GenByGoodsIdRequest{
-			RequestId: "123123123",
+			RequestId:   "123123123",
 			GoodsIdList: []string{"6918733344432093713"},
 		},
 	}

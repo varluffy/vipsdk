@@ -5,10 +5,10 @@ import "testing"
 func TestOrderList(t *testing.T) {
 	var p = OrderListParam{
 		Request: OrderQueryModel{
-			Page:1,
-			RequestId: "123123123",
+			Page:           1,
+			RequestId:      "123123123",
 			OrderTimeStart: 1594447420652,
-			OrderTimeEnd: 1594447427652,
+			OrderTimeEnd:   1594447427652,
 		},
 	}
 

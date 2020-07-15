@@ -5,7 +5,7 @@ import "testing"
 func TestGoodsList(t *testing.T) {
 	var p = GoodsListParam{
 		Request: GoodsInfoRequest{
-			Page:1,
+			Page:      1,
 			RequestId: "123123123",
 		},
 	}

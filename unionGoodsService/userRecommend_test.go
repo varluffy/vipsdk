@@ -5,7 +5,7 @@ import "testing"
 func TestUserRecommend(t *testing.T) {
 	var p = UserRecommendParam{
 		Request: UserRecommendRequest{
-			Page:1,
+			Page:      1,
 			RequestId: "123123123",
 		},
 	}

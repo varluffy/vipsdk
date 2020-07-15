@@ -14,14 +14,13 @@ func (a HealthCheckParam) Params() interface{} {
 
 type CheckResult struct {
 	ReturnCode string `json:"returnCode"`
-	Result struct{
-		Status Status `json:"status"`
+	Result     struct {
+		Status  Status `json:"status"`
 		Details map[string]string
 	} `json:"result"`
-
 }
 
 type Status struct {
-	Code string `json:"code"`
+	Code        string `json:"code"`
 	Description string `json:"description"`
 }

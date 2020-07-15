@@ -5,9 +5,9 @@ import "testing"
 func TestQueryGoods(t *testing.T) {
 	var p = QueryGoodsParam{
 		Request: QueryGoodsRequest{
-			Page:1,
+			Page:      1,
 			RequestId: "123123123",
-			Keyword: "裤子",
+			Keyword:   "裤子",
 		},
 	}
 

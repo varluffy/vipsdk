@@ -11,7 +11,7 @@ func (a GenByGoodsIdParam) MethodName() string {
 	return "genByGoodsId"
 }
 
-func (a GenByGoodsIdParam) Params() interface{}  {
+func (a GenByGoodsIdParam) Params() interface{} {
 	p := make(url.Values, 0)
 	p["goodsIdList"] = a.Request.GoodsIdList
 	p.Add("requestId", a.Request.RequestId)
@@ -26,14 +26,14 @@ func (a GenByGoodsIdParam) Params() interface{}  {
 
 type GenByGoodsIdRequest struct {
 	GoodsIdList []string `json:"goodsIdList,omitempty"` // 商品id列表
-	ChanTag string `json:"chanTag"` // 渠道标识
-	RequestId string `json:"requestId"` // 请求id：UUID
-	StatParam string `json:"statParam"` // 自定义渠道统计参数
+	ChanTag     string   `json:"chanTag"`               // 渠道标识
+	RequestId   string   `json:"requestId"`             // 请求id：UUID
+	StatParam   string   `json:"statParam"`             // 自定义渠道统计参数
 }
 
 type UrlGenResponse struct {
 	ReturnCode string `json:"returnCode"`
-	Result struct {
+	Result     struct {
 		URLInfoList []*UrlInfo `json:"urlInfoList"`
 	} `json:"result"`
 }

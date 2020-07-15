@@ -5,7 +5,6 @@ import (
 	"testing"
 )
 
-
 var client = vipsdk.NewClient("", "", vipsdk.ProdOpenAPIURL)
 
 func TestHealthCheck(t *testing.T) {
