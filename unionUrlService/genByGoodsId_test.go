@@ -1,4 +1,4 @@
-package UnionUrlService
+package unionUrlService
 
 import (
 	"github.com/varluffy/vipsdk"

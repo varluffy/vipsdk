@@ -1,4 +1,4 @@
-package UnionUrlService
+package unionUrlService
 
 import "testing"
 
