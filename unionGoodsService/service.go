@@ -56,6 +56,7 @@ type GoodsInfo struct {
 	PrepayInfo             PrepayInfo
 	JoinedActivities       []*ActivityInfo
 	CouponInfo             PMSCouponInfo
+	HaiTao                 int
 }
 
 // 店铺信息
