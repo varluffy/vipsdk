@@ -16,7 +16,7 @@ func (a OrderListParam) Params() interface{} {
 }
 
 type OrderQueryModel struct {
-	Status          int64    `json:"status"`                    // 订单状态:0-不合格，1-待定，2-已完结，该参数不设置默认代表全部状态
+	Status          int64    `json:"status,omitempty"`          // 订单状态:0-不合格，1-待定，2-已完结，该参数不设置默认代表全部状态
 	OrderTimeStart  int64    `json:"orderTimeStart,omitempty"`  // 订单时间起始 时间戳 单位毫秒
 	OrderTimeEnd    int64    `json:"orderTimeEnd,omitempty"`    // 订单时间结束 时间戳 单位毫秒
 	Page            int64    `json:"page,omitempty"`            // 页码
@@ -26,7 +26,7 @@ type OrderQueryModel struct {
 	UpdateTimeEnd   int64    `json:"updateTimeEnd,omitempty"`   // 下单时间-结束 时间戳 单位毫秒
 	OrderSnList     []string `json:"orderSnList,omitempty"`     // 订单号列表：当传入订单号列表时，订单时间和更新时间区间可不传入
 	VendorCode      string   `json:"vendorCode,omitempty"`      // 工具商code
-	ChanTag         string   `json:"chanTag"`                   // pid
+	ChanTag         string   `json:"chanTag,omitempty"`                   // pid
 }
 
 type OrderListResponse struct {
