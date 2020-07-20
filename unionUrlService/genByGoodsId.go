@@ -1,7 +1,5 @@
 package unionUrlService
 
-import "net/url"
-
 type GenByGoodsIdParam struct {
 	Service
 	Request GenByGoodsIdRequest
@@ -12,14 +10,14 @@ func (a GenByGoodsIdParam) MethodName() string {
 }
 
 func (a GenByGoodsIdParam) Params() interface{} {
-	p := make(url.Values, 0)
+	p := make(map[string]interface{}, 0)
 	p["goodsIdList"] = a.Request.GoodsIdList
-	p.Add("requestId", a.Request.RequestId)
+	p["requestId"] = a.Request.RequestId
 	if a.Request.ChanTag != "" {
-		p.Add("chanTag", a.Request.ChanTag)
+		p["chanTag"] = a.Request.ChanTag
 	}
 	if a.Request.StatParam != "" {
-		p.Add("statParam", a.Request.StatParam)
+		p["statParam"] = a.Request.StatParam
 	}
 	return p
 }
@@ -32,8 +30,9 @@ type GenByGoodsIdRequest struct {
 }
 
 type UrlGenResponse struct {
-	ReturnCode string `json:"returnCode"`
-	Result     struct {
+	ReturnCode    string `json:"returnCode"`
+	ReturnMessage string `json:"returnMessage"`
+	Result        struct {
 		URLInfoList []*UrlInfo `json:"urlInfoList"`
 	} `json:"result"`
 }

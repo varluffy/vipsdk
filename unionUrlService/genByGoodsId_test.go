@@ -5,13 +5,14 @@ import (
 	"testing"
 )
 
-var client = vipsdk.NewClient("0b78bc17", "CAC03E0A28BA1539802A2D7A312F4345", vipsdk.ProdOpenAPIURL)
+var client = vipsdk.NewClient("", "", vipsdk.ProdOpenAPIURL)
 
 func TestGenByGoodsId(t *testing.T) {
 	var p = GenByGoodsIdParam{
 		Request: GenByGoodsIdRequest{
-			RequestId:   "123123123",
-			GoodsIdList: []string{"6918733344432093713"},
+			RequestId:   "12312312333333",
+			GoodsIdList: []string{"6918712886710583375"},
+			ChanTag:     "12312312321321",
 		},
 	}
 
@@ -23,7 +24,7 @@ func TestGenByGoodsId(t *testing.T) {
 
 	t.Logf("out: %+v", out)
 	if out.ReturnCode != "0" {
-		t.Errorf("return code not equal 0, code: %s", out.ReturnCode)
+		t.Errorf("return code not equal 0, code: %s", out.ReturnCode+out.ReturnMessage)
 		return
 	}
 	for _, v := range out.Result.URLInfoList {

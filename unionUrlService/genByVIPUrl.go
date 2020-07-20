@@ -1,7 +1,5 @@
 package unionUrlService
 
-import "net/url"
-
 type GenByVIPUrlParam struct {
 	Service
 	Request GenByVIPUrlRequest
@@ -12,14 +10,15 @@ func (a GenByVIPUrlParam) MethodName() string {
 }
 
 func (a GenByVIPUrlParam) Params() interface{} {
-	p := make(url.Values, 0)
+	p := make(map[string]interface{}, 0)
 	p["urlList"] = a.Request.UrlList
-	p.Add("requestId", a.Request.RequestId)
+
+	p["requestId"] = a.Request.RequestId
 	if a.Request.ChanTag != "" {
-		p.Add("chanTag", a.Request.ChanTag)
+		p["chanTag"] = a.Request.ChanTag
 	}
 	if a.Request.StatParam != "" {
-		p.Add("statParam", a.Request.StatParam)
+		p["statParam"] = a.Request.StatParam
 	}
 	return p
 }

@@ -26,7 +26,7 @@ type OrderQueryModel struct {
 	UpdateTimeEnd   int64    `json:"updateTimeEnd,omitempty"`   // 下单时间-结束 时间戳 单位毫秒
 	OrderSnList     []string `json:"orderSnList,omitempty"`     // 订单号列表：当传入订单号列表时，订单时间和更新时间区间可不传入
 	VendorCode      string   `json:"vendorCode,omitempty"`      // 工具商code
-	ChanTag         string   `json:"chanTag,omitempty"`                   // pid
+	ChanTag         string   `json:"chanTag,omitempty"`         // pid
 }
 
 type OrderListResponse struct {

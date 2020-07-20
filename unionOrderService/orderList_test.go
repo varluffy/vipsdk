@@ -5,10 +5,13 @@ import "testing"
 func TestOrderList(t *testing.T) {
 	var p = OrderListParam{
 		Request: OrderQueryModel{
-			Page:           1,
-			RequestId:      "123123123",
-			OrderTimeStart: 1594447420652,
-			OrderTimeEnd:   1594447427652,
+			Page:      1,
+			RequestId: "12312ssss3123",
+			//OrderTimeStart: 1594447420652,
+			//OrderTimeEnd:   1594447427652,
+			UpdateTimeStart: 1595221738000,
+			UpdateTimeEnd:   1595332738000,
+			ChanTag: "[\"c21489ea1cb7e53356f88add1295f303\"]",
 		},
 	}
 
