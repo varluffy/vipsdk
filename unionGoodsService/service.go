@@ -48,7 +48,7 @@ type GoodsInfo struct {
 	Weight                 int64    `json:"weight,omitempty"`
 	StoreInfo              StoreInfo
 	CommentsInfo           GoodsCommentsInfo
-	storeServiceCapability StoreServiceCapability
+	StoreServiceCapability StoreServiceCapability
 	BrandId                int64 `json:"brandId,omitempty"`
 	SchemeStartTime        int64 `json:"schemeStartTime,omitempty"`
 	SaleStockStatus        int64 `json:"saleStockStatus,omitempty"`
